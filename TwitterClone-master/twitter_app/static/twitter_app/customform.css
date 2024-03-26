@@ -1,0 +1,36 @@
+body{
+    background-color: #202020;
+    color:#eee
+}
+
+.page-title{
+    text-align: center;
+    font-size: 32px; 
+    margin-top:20px;  
+    margin-bottom:20px;  
+}
+
+.home-title{
+    font-size: 24px; 
+    margin-top:20px;  
+    margin-bottom:20px;  
+}
+
+.tweetform{
+    border: 3px solid gray;
+    padding: 10px;
+}
+
+.tweetform label{
+    font-size: 24px;
+}
+
+.tweetform input{
+    border: 2px solid gray;
+    border-radius: 5px;
+}
+
+.tweetarea{
+    border-radius: 10px;
+    border: 2px solid lightblue;
+}

@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{%block content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+        body{
+            background-color: #202020;
+            color: whitesmoke;
+        }
+        .city_name{
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+        .feature{
+            font-size: 1rem;
+            display: inline-block;
+        }
+        .form-container{
+            background-color: #303030;
+            border: #1d1d1d solid 2px;
+            border-radius: 10px;
+            margin: 5%;
+            padding: 25px;
+            padding-top: 5%;
+        }
+        .weather-container{
+            display: flex;
+            justify-content: center;
+            padding: 10%;
+            margin-top: 20%;
+            margin-bottom: 20%;
+            background-color: #fff;
+            color: #202020;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="form-container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="mb-3 text-center">
+                        <label for="city" class="form-label "><h3>City</h3></label>
+                        <input type="text" class="form-control" id="city" name="city">
+                        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                    </div>
+                </form>    
+
+                <div class="weather-container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="container">
+                                <span class="city_name">{{city_name}}</span>
+                                <br>
+                                <div class="feature-container">
+                                    <span class="feature">Temperature : {{city_temp}}</span>
+                                    <span class="feature">Main : {{city_main}}</span>    
+                                    <span class="feature">Feels Like : {{city_feelslike}}</span>    
+                                </div>
+                            </div>     
+                        </div>
+                        <div class="col-md-6 d-flex justify-content-center">
+                            <img src={{icon}} alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    
+    
+    
+    
+    {%endblock%}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>

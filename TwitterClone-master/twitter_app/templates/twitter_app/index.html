@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static%}
+
+{%block content%}
+
+    <h1 class="home-title">Home Page</h1>
+    {%for tweet in tweets%}
+    <!--
+    <div class="card text-bg-primary mb-3" style="max-width: 18rem;">
+        <div class="card-header">{{tweet.nickname}}</div>
+        <div class="card-body text-bg-light">
+          <p class="card-text">{{tweet.message}}</h3></p>
+        </div>
+    </div>
+    -->
+    <div class="card w-100 mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{tweet.nickname}}</h5>
+          <hr>
+          <p class="card-text">{{tweet.message}}</p>
+        </div>
+    </div>
+    {%endfor%}
+
+
+
+{%endblock%}
